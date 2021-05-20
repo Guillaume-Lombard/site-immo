@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent() }} | About us{% endblock %}
+
+{% block body %}
+
+    <h3 class="ms-3 mt-4">Choses importantes qu'on ne lit jamais !</h3>
+
+    <div class="accordion mt-5" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Conditions Générales d'Utilisation
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>CGU : </strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aliquid blanditiis, dicta facilis maiores nam nesciunt nobis obcaecati omnis perspiciatis qui quo sunt, ullam vitae voluptatibus voluptatum? Sint, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, cupiditate dicta, eos expedita fuga maxime molestias mollitia omnis placeat quasi repudiandae sint, vero voluptatem? Ex ipsum molestias non nostrum soluta! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores commodi, facere fugiat incidunt minima quo quod! Alias animi cum est illum numquam odio, omnis perferendis quia quo saepe sit vero!
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Mentions Légales
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>Mentions Légales : </strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores commodi, facere fugiat incidunt minima quo quod! Alias animi cum est illum numquam odio, omnis perferendis quia quo saepe sit vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores commodi, facere fugiat incidunt minima quo quod! Alias animi cum est illum numquam odio, omnis perferendis quia quo saepe sit vero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores commodi, facere fugiat incidunt minima quo quod! Alias animi cum est illum numquam odio, omnis perferendis quia quo saepe sit vero!
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
