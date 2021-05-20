@@ -3,3 +3,21 @@
     max-width: 100%;
     height: auto;
 }
+
+.footer {
+
+    height:auto;
+    width: 100%;
+    position: fixed;
+    bottom: 0pt;
+    left: 0pt;
+
+}
+
+.footer_contents {
+
+    height:24px;
+    width: 1000px;
+    margin:auto;
+
+}
