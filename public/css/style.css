@@ -4,20 +4,28 @@
     height: auto;
 }
 
-.footer {
+label{
+    display: block;
+}
+input,
+textarea,
+select {
+    margin-bottom: 0.5rem;
+    box-sizing: border-box;
+    width: 200px;
+    max-width: 50%;
+}
 
+.footer {
     height:auto;
     width: 100%;
     position: fixed;
     bottom: 0pt;
     left: 0pt;
-
 }
 
 .footer_contents {
-
     height:24px;
     width: 1000px;
     margin:auto;
-
 }

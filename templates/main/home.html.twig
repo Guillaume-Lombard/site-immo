@@ -4,5 +4,49 @@
 
 
 {% block body %}
-    <div>Welcome</div>
+
+    <!-- Affichage du formulaire de recherche-->
+    <div class="accordion mt-3" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Recherche
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>formulaire</strong>affichage formulaire
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Affichage des annonces-->
+    <div class="container mt-3">
+    {% for property in properties %}
+    <div class="body card mb-3">
+        <div class="row g-0 bg-light position-relative">
+            <div class="col-md-6 mb-md-0 p-md-4">
+                <img src="..." class="w-100" alt="...">
+            </div>
+            <div class="col-md-6 p-4 ps-md-0">
+                <h5 class="mt-0">{{ property.type }}</h5>
+                <p>
+                    Area : {{ property.area }} m² <br>
+                    Number of room: {{ property.room }} rooms<br>
+                    {% if property.swimmingPool %}
+                    With swimming pool<br>
+                    {% endif %}
+                    {% if property.garage %}
+                        With garage<br>
+                    {% endif %}
+                    <br>Price : {{ property.price|number_format(2,'.',' ') }} €
+                </p>
+                <a href="{{ path('main_detail', {'id' : property.id} ) }}" class="btn btn-outline-success">Detail</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
 {% endblock %}

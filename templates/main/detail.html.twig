@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent() }} | Detail{% endblock %}
+
+{% block body %}
+
+    <div class="container mt-3">
+        <div>
+            <h4>{{ property.buyingOrLeasing }} {{ property.type }}</h4>
+            <div class="row">
+                <p class="col">{{ property.price|number_format(2, '.', ' ') }} €</p>
+                <button class="col-2 btn btn-sm btn-outline-success" href="">Modifer</button>
+            </div>
+
+
+        </div>
+        <div class="card mt-3 mt-3">
+            <img src="..." class="img-fluid" alt="...">
+        </div>
+        <div>
+            <h5 class="mt-3">Description :</h5>
+            <p>
+                Surface : {{ property.area|number_format(2, '.', ' ') }} m² <br>
+                Nombre de pièces: {{ property.room }} pièces<br>
+                {% if property.swimmingPool %}
+                    Avec piscine<br>
+                {% endif %}
+                {% if property.outside > 0 %}
+                    Terrain : {{ property.outside|number_format(2, '.', ' ') }} m²<br>
+                {% else %}
+                    Pas extèrieur<br>
+                {% endif %}
+                {% if property.garage %}
+                    Avec garage<br>
+                {% endif %}
+                Adresse : {{ property.address }}<br>
+                Publier le {{ property.datePublication|date('Y-m-d') }}<br>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}
+
+
