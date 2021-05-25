@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Property;
 use App\Model\SearchProperty;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
@@ -34,15 +35,6 @@ class SearchPropertyType extends AbstractType
                 'label' => 'Nombre de pièces maximum',
                 'required' => false,
             ])
-            ->add('type', ChoiceType::class, [
-                'label' => 'Type',
-                'choices' => [
-                    'Vente' => 'vente',
-                    'Location' => 'location',
-                ],
-                'multiple'=>false,
-                'required'=>false,
-            ])
             ->add('housseType', ChoiceType::class, [
                 'label' => 'Type de logement',
                 'choices' => [
@@ -57,11 +49,11 @@ class SearchPropertyType extends AbstractType
                 'label' => 'Adresse',
                 'required' => false,
             ])
-            ->add('garage', ChoiceType::class, [
+            ->add('garage', CheckboxType::class, [
                 'label' => 'Garage',
                 'required' => false,
             ])
-            ->add('swimmingPool', ChoiceType::class, [
+            ->add('swimmingPool', CheckboxType::class, [
                 'label' => 'Piscine',
                 'required' => false,
             ])

@@ -2,7 +2,7 @@
 
 namespace App\Model;
 
-//use App\Repository\PropertyRepository;
+use App\Repository\PropertyRepository;
 
 class SearchProperty
 {

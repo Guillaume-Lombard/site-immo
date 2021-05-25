@@ -18,24 +18,26 @@ class MainController extends AbstractController
     /**
      * @Route("/", name="main_home")
      */
-    public function home(Request $request, SearchPropertyRepository $searchPropertyRepository, EntityManagerInterface $entityManager): Response
+    public function home(Request $request, PropertyRepository $propertyRepository, EntityManagerInterface $entityManager): Response
     {
-        //$properties = $propertyRepository->findBy([], ["datePublication" => "DESC"]);
-
+        //formulaire de recherche
         $searchProperties = new SearchProperty();
         $searchPropertiesForm = $this->createForm(SearchPropertyType::class, $searchProperties);
-
         $searchPropertiesForm->handleRequest($request);
 
         if ($searchPropertiesForm->isSubmitted() && $searchPropertiesForm->isValid()){
-
-            //TODO appel a la methode findHousse dans searchPropertyRepository qui est a coder
+            $query = $propertyRepository->findSearchProperty($searchProperties);
+            $properties = $query['properties'];
+            $nbProperties = $query['nbProperties'];
+        }else{
+            $nbProperties = $propertyRepository->count([]);
+            $properties = $propertyRepository->findBy([], ["datePublication" => "DESC"]);
         }
 
-        //TODO si le formulaire n'est pas utiliser afficher findAll
-
         return $this->render('main/home.html.twig', [
-
+            'searchForm' => $searchPropertiesForm->createView(),
+            'properties'=> $properties,
+            'nbProperties' => $nbProperties
         ]);
     }
 

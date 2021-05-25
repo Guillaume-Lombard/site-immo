@@ -19,9 +19,9 @@ select {
 .footer {
     height:auto;
     width: 100%;
-    position: fixed;
-    bottom: 0pt;
-    left: 0pt;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 .footer_contents {
